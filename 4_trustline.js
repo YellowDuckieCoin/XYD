@@ -4,7 +4,7 @@ const QRCode = require('qrcode');
 async function createTrustSetPayload() {
   const apiUrl = 'https://api.xrpl.services/api/v1/platform/payload';
 
-  // 请求体，与你抓包请求内容完全一致
+  // Request body, exactly matching your captured request content
   const requestData = {
     "options": {
       "xrplAccount": null,
@@ -41,24 +41,24 @@ async function createTrustSetPayload() {
     });
 
     const payloadUrl = response.data.next.always;
-    console.log("✅ 成功创建Xaman Payload URL：", payloadUrl);
+    console.log("✅ Successfully created Xaman Payload URL:", payloadUrl);
 
-    // 生成二维码到终端
+    // Generate QR code to terminal
     QRCode.toString(payloadUrl, { type: 'terminal', small: true }, function(err, qr) {
       if (err) {
-        console.error('生成二维码失败:', err);
+        console.error('Failed to generate QR code:', err);
         return;
       }
-      console.log("\n📌 请使用 Xaman 钱包扫描以下二维码进行签名:\n");
+      console.log("\n📌 Please use Xaman wallet to scan the following QR code to sign:\n");
       console.log(qr);
     });
 
-    // 同时保存二维码为图片
+    // Also save QR code as an image
     await QRCode.toFile('xaman_payload_qr.png', payloadUrl, { width: 300 });
-    console.log("二维码图片已保存为 xaman_payload_qr.png");
+    console.log("QR code image has been saved as xaman_payload_qr.png");
 
   } catch (error) {
-    console.error('请求失败:', error.response ? error.response.data : error.message);
+    console.error('Request failed:', error.response ? error.response.data : error.message);
   }
 }
 
