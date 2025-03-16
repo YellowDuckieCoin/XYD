@@ -1,6 +1,8 @@
 # XRPL Token Management Scripts
 ![image](https://github.com/user-attachments/assets/e492feda-67bc-4598-ae6f-db635386159a)
 
+> Yellow Duckie is inspired by the iconic rubber duck from our childhood bathtubs. The Bitcoin symbol and trendy sunglasses reflect Gen Z pop culture and crypto spirit. After consulting patent experts, we confirm that the Bitcoin symbol is universal, free to use, and does not infringe any intellectual property rights.
+
 
 This repository provides JavaScript scripts for managing a custom token, **XYD** (YellowDuckie) 🟡🦆, on the XRP Ledger (XRPL) Testnet. XYD brings a delightful splash of fun to the blockchain!
 ![image](https://github.com/user-attachments/assets/8e5a8f5d-e351-408d-b587-21229f4d749b)
